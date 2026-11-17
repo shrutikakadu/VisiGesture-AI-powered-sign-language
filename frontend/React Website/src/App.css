@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* ── Backgrounds (very light mint green + white) ───── */
+  --bg:        #f4fbf7;
+  --bg2:       #ffffff;
+  --surface:   #ffffff;
+  --surface2:  #e6f4ed;
+  --surface3:  #d5ebd9;
+
+  /* ── Borders ──────────────────────────────── */
+  --border:    #daf0e3;
+  --border2:   #bddfb5;
+
+  /* ── Typography (deep forest slate) ────────── */
+  --text:      #0c2b1a;
+  --text2:     #1a3e2b;
+  --muted:     #507461;
+  --muted2:    #7da48f;
+
+  /* ── Mint / Emerald Primary Accent ─────────── */
+  --indigo:      #10b981;
+  --indigo-soft: #059669;
+  --indigo-light:#e6f7ee;
+  --indigo-glow: rgba(16, 185, 129, 0.12);
+
+  /* ── Emerald Accent ────────────────────────── */
+  --emerald:     #22c55e;
+  --emerald-soft:#4ade80;
+  --emerald-light:#f0fdf4;
+  --emerald-glow: rgba(34, 197, 94, 0.1);
+
+  /* ── Violet (accent) ─────────────────────── */
+  --violet:      #0d9488;
+  --violet-light:#ccfb80;
+
+  /* ── Amber (highlight) ───────────────────── */
+  --amber:       #eab308;
+  --amber-light: #fef9c3;
+
+  /* ── Semantic ────────────────────────────── */
+  --green:     #10b981;
+  --green-bg:  #e6f7ee;
+  --red:       #f43f5e;
+  --red-bg:    #fff1f2;
+  --blue:      #0ea5e9;
+  --blue-bg:   #e0f2fe;
+
+  /* ── Shape ───────────────────────────────── */
+  --radius:    12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  /* ── Shadows (soft, light green) ─────────── */
+  --shadow-sm:  0 1px 3px rgba(12,43,26,0.04), 0 1px 2px rgba(12,43,26,0.03);
+  --shadow:     0 4px 16px rgba(12,43,26,0.05), 0 1px 4px rgba(12,43,26,0.03);
+  --shadow-lg:  0 12px 40px rgba(12,43,26,0.08), 0 4px 12px rgba(12,43,26,0.03);
+  --shadow-xl:  0 20px 60px rgba(12,43,26,0.1);
+
+  /* ── Semantic theme-dependent styles ────── */
+  --nav-bg:        rgba(244, 251, 247, 0.88);
+  --card-bg:       rgba(255, 255, 255, 0.7);
+  --card-hover-bg: #ffffff;
+  --glass-bg:      rgba(255, 255, 255, 0.5);
+  --badge-bg:      rgba(255, 255, 255, 0.9);
+}
+
+.dark {
+  /* ── Backgrounds (soothing dark forest-green) ───────────── */
+  --bg:        #040b07;
+  --bg2:       #0b1c12;
+  --surface:   #0b1c12;
+  --surface2:  #122c1e;
+  --surface3:  #1e4732;
+
+  /* ── Borders ──────────────────────────────── */
+  --border:    #163222;
+  --border2:   #27533b;
+
+  /* ── Typography (minty white) ──────────────── */
+  --text:      #ecfdf5;
+  --text2:     #d1fae5;
+  --muted:     #82a893;
+  --muted2:    #577f69;
+
+  /* ── Glowing Mint accents in dark theme ────────── */
+  --indigo-light:  rgba(52, 211, 153, 0.12);
+  --indigo-glow:   rgba(52, 211, 153, 0.3);
+  --emerald-light: rgba(34, 197, 94, 0.12);
+  --emerald-glow:  rgba(74, 222, 128, 0.25);
+  --violet-light:  rgba(13, 148, 136, 0.15);
+  --amber-light:   rgba(234, 179, 8, 0.15);
+  
+  /* Shadows in dark theme */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.4);
+  --shadow:     0 4px 16px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4);
+  --shadow-lg:  0 12px 40px rgba(0,0,0,0.7), 0 4px 12px rgba(0,0,0,0.5);
+  --shadow-xl:  0 20px 60px rgba(0,0,0,0.8);
+
+  /* Semantic theme-dependent styles */
+  --nav-bg:        rgba(4, 11, 7, 0.88);
+  --card-bg:       rgba(11, 28, 18, 0.65);
+  --card-hover-bg: #0b1c12;
+  --glass-bg:      rgba(11, 28, 18, 0.45);
+  --badge-bg:      rgba(11, 28, 18, 0.85);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ── Loading Screen ─────────────────────────── */
+.loading-screen {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 1rem;
+  background: var(--bg); color: var(--muted);
+}
+.spinner {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--indigo);
+  animation: spin 0.8s linear infinite;
+}
+
+/* ── Gradient Text ─────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--indigo), var(--violet));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Buttons ────────────────────────────────── */
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--indigo);
+  color: #fff; text-decoration: none; border: none;
+  border-radius: 10px; font-size: 0.95rem; font-weight: 700;
+  cursor: pointer; transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px var(--indigo-glow); font-family: inherit;
+  letter-spacing: 0.01em;
+}
+.btn-primary:hover:not(:disabled) { background: #4338ca; transform: translateY(-2px); box-shadow: 0 8px 24px var(--indigo-glow); }
+.btn-primary:active:not(:disabled) { transform: translateY(0); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary.large { padding: 0.9rem 2.25rem; font-size: 1rem; }
+.btn-primary.full  { width: 100%; }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--surface); color: var(--text); text-decoration: none;
+  border: 1.5px solid var(--border2); border-radius: 10px;
+  font-size: 0.95rem; font-weight: 600; cursor: pointer;
+  transition: background 0.2s, transform 0.15s, border-color 0.2s; font-family: inherit;
+}
+.btn-secondary:hover { background: var(--surface2); border-color: var(--indigo); color: var(--indigo); transform: translateY(-2px); }
+.btn-secondary.large { padding: 0.9rem 2.25rem; font-size: 1rem; }
+.btn-secondary.full  { width: 100%; }
+
+/* ── Auth button ────────────────────────────── */
+.btn-auth {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  width: 100%; padding: 0.85rem;
+  background: var(--indigo); color: #fff; border: none;
+  border-radius: 10px; font-size: 0.97rem; font-weight: 700;
+  cursor: pointer; transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px var(--indigo-glow); font-family: inherit;
+}
+.btn-auth:hover:not(:disabled) { background: #4338ca; transform: translateY(-2px); }
+.btn-auth:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Tags ──────────────────────────────────── */
+.tag {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 999px;
+  font-size: 0.75rem; font-weight: 600;
+}
+.tag-indigo  { background: var(--indigo-light); color: var(--indigo);  border: 1px solid rgba(79,70,229,0.15); }
+.tag-emerald { background: var(--emerald-light); color: var(--emerald); border: 1px solid rgba(16,185,129,0.15); }
+.tag-amber   { background: var(--amber-light); color: var(--amber);   border: 1px solid rgba(245,158,11,0.15); }
+.tag-green   { background: var(--green-bg);    color: var(--green);   border: 1px solid rgba(16,185,129,0.15); }
+.tag-red     { background: var(--red-bg);      color: var(--red);     border: 1px solid rgba(239,68,68,0.15); }
+.tag-blue    { background: var(--blue-bg);     color: var(--blue);    border: 1px solid rgba(59,130,246,0.15); }
+.tag-purple  { background: var(--violet-light); color: var(--violet); border: 1px solid rgba(124,58,237,0.15); }
+.tag-teal    { background: var(--emerald-light); color: var(--emerald); border: 1px solid rgba(16,185,129,0.15); }
+
+/* ── Animations ─────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes floatY  { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes spin    { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes pulse   { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+@keyframes scanLine{ 0% { top: 0; opacity: 1; } 100% { top: 100%; opacity: 0; } }
+@keyframes barGrow { from { width: 0; } }
+
+/* ── Premium Custom Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface3);
+  border-radius: 99px;
+  border: 3px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--indigo);
+}

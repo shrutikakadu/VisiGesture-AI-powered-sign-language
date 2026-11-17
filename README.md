@@ -141,3 +141,25 @@ cd mobile
 npm install
 npx expo start
 ```
+
+---
+
+## 🌐 Sister Project
+
+This system also has an IoT **Smart Home** branch, which uses sign language gestures to control home devices.
+
+**Sign Language Smart Home** — Gesture-controlled smart home automation
+→ [Sign-Language-SmartHome](https://github.com/himanshugulhane01/Sign-Language-SmartHome)
+
+---
+
+## 👨‍💻 Author
+
+**Himanshu Gulhane**  
+AI Sign Language Recognition System
+
+---
+
+## 📄 License
+
+MIT License — Open source, use freely.

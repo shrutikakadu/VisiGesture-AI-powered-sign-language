@@ -1,0 +1,56 @@
+========================================================================
+             AI SIGN LANGUAGE SYSTEM - RUN INSTRUCTIONS
+========================================================================
+
+Follow these steps to run the Backend, Frontend, and check the Database.
+
+------------------------------------------------------------------------
+1. PREREQUISITES (Required Software)
+------------------------------------------------------------------------
+* Java JDK 21 or higher installed
+* Node.js (v18+ recommended) installed
+
+------------------------------------------------------------------------
+2. HOW TO RUN THE BACKEND (Java Spring Boot)
+------------------------------------------------------------------------
+1. Open PowerShell, Command Prompt, or your terminal.
+2. Navigate to the backend folder from the project root:
+   cd backend\API\api
+   (On macOS/Linux: cd backend/API/api)
+3. Run the backend using the Maven wrapper:
+   .\mvnw.cmd spring-boot:run
+   (On macOS/Linux: ./mvnw spring-boot:run)
+4. Wait for it to start. The server will run at:
+   http://localhost:8080/
+
+------------------------------------------------------------------------
+3. HOW TO RUN THE FRONTEND (React Website)
+------------------------------------------------------------------------
+1. Open a NEW terminal window.
+2. Navigate to the frontend folder from the project root:
+   cd "frontend\React website"
+   (On macOS/Linux: cd "frontend/React website")
+3. Install dependencies (first time only):
+   npm install
+4. Start the Vite development server:
+   npm run dev
+5. The website will be available at:
+   http://localhost:5173/
+
+------------------------------------------------------------------------
+4. HOW TO CHECK THE DATABASE (H2 In-Memory)
+------------------------------------------------------------------------
+Since the backend uses an in-memory H2 Database, it runs automatically 
+when you start the backend. To view the database tables:
+
+1. Open your browser and go to:
+   http://localhost:8080/h2-console
+2. Fill in the connection settings exactly like this:
+   - Saved Settings: Generic H2 (Embedded)
+   - Driver Class  : org.h2.Driver
+   - JDBC URL      : jdbc:h2:mem:signlanguagedb
+   - User Name     : sa
+   - Password      : [Leave this completely blank]
+3. Click "Connect".
+4. To see registered users, run this SQL query:
+   SELECT * FROM APP_USERS;
